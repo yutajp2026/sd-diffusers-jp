@@ -5,6 +5,7 @@ import os
 import gradio as gr
 import webbrowser
 import platform
+from diffusers.utils import make_image_grid, load_image
 
 model_file = 'v1-5-pruned-emaonly.safetensors'
 
@@ -19,11 +20,12 @@ else:
     print("GPUが利用できません。CPUを使用します。")
     device = 'cpu'
 
+honyaku = Translator('en','ja').translate
+
 with gr.Blocks() as demo:
     gr.Markdown("# Stable Diffusion 日本語プロンプト対応版")
     with gr.Tab("txt2img"):
         pipe = StableDiffusionPipeline.from_single_file(model_file).to(device)
-        honyaku = Translator('en','ja').translate
 
         def txt2img(prompt, steps):
             img = pipe(honyaku(prompt), num_inference_steps=steps).images[0]
@@ -35,18 +37,7 @@ with gr.Blocks() as demo:
         image_output = gr.Image()
         generate_btn.click(fn=txt2img, inputs=[prompt_input, steps_input], outputs=image_output)
     with gr.Tab("img2img"):
-        from diffusers.utils import make_image_grid, load_image
-
-        pipeline = AutoPipelineForImage2Image.from_pretrained(model_file, use_safetensors=True)
-        pipeline.enable_model_cpu_offload()
-
-        url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/img2img-init.png"
-        init_image = load_image(url)
-
-        prompt = "Astronaut in a jungle, cold color palette, muted colors, detailed, 8k"
-
-        image = pipeline(prompt, image=init_image).images[0]
-        make_image_grid([init_image, image], rows=1, cols=2)
+        gr.Markdown("img2imgは現在サポートされていません。")
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
