@@ -19,6 +19,9 @@ fi
 source .venv/bin/activate
 python -m pip install --upgrade pip
 
+mkdir -p ~/pip_cache
+export TMPDIR=~/pip_cache
+
 pip install gradio diffusers transformers translate
 pip install torch==2.12.0 torchvision==0.27.0 --index-url https://download.pytorch.org/whl/cu126
 
