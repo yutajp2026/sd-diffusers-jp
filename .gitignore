@@ -3,3 +3,4 @@
 /venv
 /sd.bat
 /*.json
+/*.pyc
