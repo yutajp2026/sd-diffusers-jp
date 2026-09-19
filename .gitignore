@@ -1,5 +1,6 @@
 /output.jpg
-/v1-5-pruned-emaonly.safetensors
+/*.safetensors
 /venv
 /sd.bat
 /*.json
+/*.exe
