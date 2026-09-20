@@ -6,6 +6,7 @@ import gradio as gr
 import webbrowser
 import platform
 from PIL import Image
+import time
 
 model_file = 'v1-5-pruned-emaonly.safetensors'
 
@@ -52,6 +53,8 @@ with gr.Blocks() as demo:
         img2img_btn.click(fn=img2img, inputs=[image_input, prompt_input, steps_input], outputs=image_output)
     with gr.Tab("メニュー"):
         def quit():
+            gr.Info("アプリケーション終了。タブは手動で閉じてください。")
+            time.sleep(1)
             os._exit(0)
         quit_btn = gr.Button("終了")
         quit_btn.click(fn=quit, inputs=[], outputs=[])
