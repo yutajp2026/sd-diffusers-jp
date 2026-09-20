@@ -14,7 +14,7 @@
 ## インストール
 ## Windows
 Releasesにインストーラを年内公開
-## linux
+## Linux
 1. `sudo apt-get install git`でgitをインストール
 2. `git clone https://github.com/yutajp2026/sd-diffusers-jp.git`でこのリポジトリをクローン
 3. `cd sd-diffusers-jp`でスクリプトディレクトリに移動
