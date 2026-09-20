@@ -50,6 +50,11 @@ with gr.Blocks() as demo:
         img2img_btn = gr.Button("生成")
         image_output = gr.Image()
         img2img_btn.click(fn=img2img, inputs=[image_input, prompt_input, steps_input], outputs=image_output)
+    with gr.Tab("メニュー"):
+        def quit():
+            os._exit(0)
+        quit_btn = gr.Button("終了")
+        quit_btn.click(fn=quit, inputs=[], outputs=[])
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
