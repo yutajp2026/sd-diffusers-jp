@@ -11,8 +11,10 @@ import time
 model_file = 'v1-5-pruned-emaonly.safetensors'
 
 if not os.path.exists(model_file):
+    print("モデルをダウンロードしています...")
     url = 'https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors'
     torch.hub.download_url_to_file(url, model_file, hash_prefix=None, progress=True)
+    print("モデルのダウンロードが完了しました。")
 
 if torch.cuda.is_available():
     print("GPUが利用可能です。CUDAを使用します。")
@@ -25,11 +27,13 @@ honyaku = Translator('en','ja').translate
 
 with gr.Blocks() as demo:
     gr.Markdown("# Stable Diffusion 日本語プロンプト対応版")
+    gr.Markdown("モデルのパス: " + os.path.join(os.getcwd(), model_file))
     with gr.Tab("txt2img"):
         gr.Markdown("Txt2Imgタブでは、テキストから画像を生成できます。")
         def txt2img(prompt, steps):
             pipe1 = StableDiffusionPipeline.from_single_file(model_file).to(device)
             img = pipe1(honyaku(prompt), num_inference_steps=steps).images[0]
+            gr.Info("生成が完了しました。")
             return img
 
         prompt_input = gr.Textbox(label="プロンプト")
@@ -44,6 +48,7 @@ with gr.Blocks() as demo:
             pipe2 = StableDiffusionImg2ImgPipeline.from_single_file(model_file).to(device)
             img0 = Image.open(image)
             img = pipe2(honyaku(prompt), image=img0, num_inference_steps=steps).images[0]
+            gr.Info("生成が完了しました。")
             return img
         image_input = gr.Image(label="入力画像", type="filepath")
         prompt_input = gr.Textbox(label="プロンプト")
