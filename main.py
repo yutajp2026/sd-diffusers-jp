@@ -61,5 +61,7 @@ with gr.Blocks() as demo:
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
+else:
+    print("ブラウザで以下のURLを開いてください。")
 
 demo.launch()
