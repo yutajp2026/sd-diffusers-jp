@@ -19,6 +19,7 @@ Releasesにインストーラを年内公開
 2. `git clone https://github.com/yutajp2026/sd-diffusers-jp.git`でこのリポジトリをクローン
 3. `cd sd-diffusers-jp`でスクリプトディレクトリに移動
 4. `bash sdwebui.sh`で実行
+5. `git pull`でアップデート
 
 # Stable Diffusionに興味を持った方へ
 これらのアプリには様々な機能が備わっています。
