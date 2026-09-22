@@ -22,8 +22,8 @@ Releasesにインストーラを年内公開
 5. `git pull`でアップデート
 
 # Stable Diffusionに興味を持った方へ
-これらのアプリには様々な機能が備わっています。上から順に使いやすいです。
-- [InvokeAI](https://invoke.ai/start-here/installation/) (必要なものなし)
+これらのアプリには様々な機能が備わっており、本ソフトでダウンロードしたモデルを流用できる可能性があります。上から順に使いやすいです。
+- [InvokeAI](https://invoke.ai/start-here/installation/)
+- [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI)
 - [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (gitと要件に掲載のバージョンのPythonが必要、日本語非対応)
 - [ComfyUI](https://comfy.org/download) (GPUが必要)
-- [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI) (バックエンドにstable-diffusion-webuiまたはComfyUIなどが必要)
