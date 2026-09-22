@@ -8,7 +8,7 @@ import platform
 from PIL import Image
 import time
 
-sd_file = 'v1-5-pruned-emaonly.safetensors'
+sd_file = os.path.join(os.getcwd(), 'v1-5-pruned-emaonly.safetensors')
 
 if not os.path.exists(sd_file):
     print("モデルをダウンロードしています...")
@@ -70,6 +70,7 @@ with gr.Blocks() as demo:
         quit_btn = gr.Button("終了")
         quit_btn.click(fn=quit, inputs=[], outputs=[])
         gr.Markdown("## モデル設定")
+        gr.Markdown("下記モデルパスは、他のソフトでモデルを使うときのストレージの節約に役に立ちます。デフォルトは " + os.path.join(os.getcwd(), sd_file))
         def change_model(model_path):
             global model_file
             model_file = model_path
@@ -80,7 +81,7 @@ with gr.Blocks() as demo:
             with open('model_settings.txt', 'w') as f:
                 f.write(model_file)
             gr.Info("モデルが変更されました。新しいモデルのパス: " + model_file)
-        model_input = gr.Textbox(label="モデルのパス(クオーテーションやダブルクオーテーションはつけない、デフォルトは " + sd_file + ")", value=model_file)
+        model_input = gr.Textbox(label="モデルのパス(クオーテーションやダブルクオーテーション不要)", value=model_file)
         change_model_btn = gr.Button("モデル変更")
         change_model_btn.click(fn=change_model, inputs=[model_input], outputs=[])
 
