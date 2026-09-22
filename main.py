@@ -7,7 +7,9 @@ import webbrowser
 import platform
 from PIL import Image
 import time
+import logging
 
+logging.basicConfig(level=logging.INFO)
 sd_file = os.path.join(os.getcwd(), 'v1-5-pruned-emaonly.safetensors')
 
 if not os.path.exists(sd_file):
