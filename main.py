@@ -8,13 +8,19 @@ import platform
 from PIL import Image
 import time
 
-model_file = 'v1-5-pruned-emaonly.safetensors'
+sd_file = 'v1-5-pruned-emaonly.safetensors'
 
-if not os.path.exists(model_file):
+if not os.path.exists(sd_file):
     print("モデルをダウンロードしています...")
     url = 'https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors'
-    torch.hub.download_url_to_file(url, model_file, hash_prefix=None, progress=True)
+    torch.hub.download_url_to_file(url, sd_file, hash_prefix=None, progress=True)
     print("モデルのダウンロードが完了しました。")
+
+if os.path.exists('model_settings.txt'):
+    with open('model_settings.txt', 'r') as f:
+        model_file = f.read().strip()
+else:
+    model_file = sd_file
 
 if torch.cuda.is_available():
     print("GPUが利用可能です。CUDAを使用します。")
@@ -27,7 +33,6 @@ honyaku = Translator('en','ja').translate
 
 with gr.Blocks() as demo:
     gr.Markdown("# Stable Diffusion 日本語プロンプト対応版")
-    gr.Markdown("モデルのパス: " + os.path.join(os.getcwd(), model_file))
     with gr.Tab("txt2img"):
         gr.Markdown("Txt2Imgタブでは、テキストから画像を生成できます。")
         def txt2img(prompt, steps):
@@ -57,12 +62,27 @@ with gr.Blocks() as demo:
         image_output = gr.Image()
         img2img_btn.click(fn=img2img, inputs=[image_input, prompt_input, steps_input], outputs=image_output)
     with gr.Tab("メニュー"):
+        gr.Markdown("## サーバー")
         def quit():
             gr.Info("アプリケーション終了。タブは手動で閉じてください。")
             time.sleep(1)
             os._exit(0)
         quit_btn = gr.Button("終了")
         quit_btn.click(fn=quit, inputs=[], outputs=[])
+        gr.Markdown("## モデル設定")
+        def change_model(model_path):
+            global model_file
+            model_file = model_path
+            if model_path == sd_file:
+                gr.Info("デフォルトのモデルが選択されました。")
+                os.remove('model_settings.txt') if os.path.exists('model_settings.txt') else None
+                return
+            with open('model_settings.txt', 'w') as f:
+                f.write(model_file)
+            gr.Info("モデルが変更されました。新しいモデルのパス: " + model_file)
+        model_input = gr.Textbox(label="モデルのパス(クオーテーションやダブルクオーテーションはつけない、デフォルトは " + sd_file + ")", value=model_file)
+        change_model_btn = gr.Button("モデル変更")
+        change_model_btn.click(fn=change_model, inputs=[model_input], outputs=[])
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
