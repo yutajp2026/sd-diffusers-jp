@@ -10,6 +10,8 @@
 - diffusersを使用
 - デバイスを自動選択(CPU、Nvidia GPU)
 - 生成時間最長約9分(推論ステップ数10、CPUの場合)
+- Stable Diffusion 1.5を自動ダウンロード
+- モデル変更
 
 # インストール
 ## Windows
@@ -22,8 +24,8 @@ Releasesにインストーラを年内公開
 5. `git pull`でアップデート
 
 # Stable Diffusionに興味を持った方へ
-これらのアプリには様々な機能が備わっており、本ソフトでダウンロードしたモデルを流用できる可能性があります。上から順に使いやすいです。
-- [InvokeAI](https://invoke.ai/start-here/installation/)
-- [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI)
-- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) - gitと要件に掲載のバージョンのPythonと設定の編集などが必要、日本語非対応
-- [ComfyUI](https://comfy.org/download) - ワークフローの知識が必要
+これらのアプリには様々な機能が備わっており、本ソフトでダウンロードしたモデルを流用できます。上から順に使いやすいです。
+- [InvokeAI](https://invoke.ai/start-here/installation/) (モデルパスに本ソフトでダウンロードしたモデルへのパスを入力)
+- [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI) (Models\Stable-diffusionにモデルをコピー)
+- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (同じモデルが自動でダウンロードされます)
+- [ComfyUI](https://comfy.org/download) (モデルフォルダのdiffusion_modelsにコピー)
