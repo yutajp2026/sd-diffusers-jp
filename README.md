@@ -25,5 +25,5 @@ Releasesにインストーラを年内公開
 これらのアプリには様々な機能が備わっており、本ソフトでダウンロードしたモデルを流用できる可能性があります。上から順に使いやすいです。
 - [InvokeAI](https://invoke.ai/start-here/installation/)
 - [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI)
-- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (gitと要件に掲載のバージョンのPythonが必要、日本語非対応)
+- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (gitと要件に掲載のバージョンのPythonと設定の編集などが必要、日本語非対応)
 - [ComfyUI](https://comfy.org/download) (GPUが必要)
