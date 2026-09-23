@@ -27,5 +27,5 @@ Releasesにインストーラを年内公開
 これらのアプリには様々な機能が備わっており、本ソフトでダウンロードしたモデルを流用できます。上から順に使いやすいです。
 - [InvokeAI](https://invoke.ai/start-here/installation/) (モデルパスに本ソフトでダウンロードしたモデルへのパスを入力)
 - [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI) (Models\Stable-diffusionにモデルをコピー)
-- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (同じモデルが自動でダウンロードされます)
+- [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) (本ソフトと同じモデルが自動でダウンロードされます)
 - [ComfyUI](https://comfy.org/download) (モデルフォルダのdiffusion_modelsにコピー)
