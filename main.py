@@ -86,6 +86,10 @@ with gr.Blocks() as demo:
         change_model_btn.click(fn=change_model, inputs=[model_input], outputs=[])
         gr.Markdown("## 製品について")
         gr.Markdown("https://github.com/yutajp2026/sd-diffusers-jp")
+        version = os.getenv("VERSION")
+        if version:
+            gr.Markdown("現在使用しているアプリのバージョン: " + version)
+            gr.Markdown("最新のバージョンは、上記GitHubページで確認できます。")
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
