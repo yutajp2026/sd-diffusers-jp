@@ -84,6 +84,8 @@ with gr.Blocks() as demo:
         model_input = gr.Textbox(label="モデルのパス(クオーテーションやダブルクオーテーション不要)", value=model_file)
         change_model_btn = gr.Button("モデル変更")
         change_model_btn.click(fn=change_model, inputs=[model_input], outputs=[])
+        gr.Markdown("## 製品について")
+        gr.Markdown("https://github.com/yutajp2026/sd-diffusers-jp")
 
 if platform.system() == "Windows":
     webbrowser.open("http://localhost:7860")
