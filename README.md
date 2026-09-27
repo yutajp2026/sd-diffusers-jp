@@ -1,5 +1,5 @@
 # Stable Diffusion With Diffusers JP
-画像生成AIであるStable Diffusionを簡単に使えるようにしたアプリ。使いやすさを重視。
+画像生成AIであるStable Diffusionを簡単に使えるようにしたアプリ。
 
 # 特徴
 - Gradioを使ったWebUI(Windowsのみ自動でブラウザを開く)
@@ -29,7 +29,7 @@ Releasesにインストーラを年内公開
 ### [SwarmUI](https://swarmui.net/)
 モデル使用: Models内のStable-diffusionにコピー
 ### [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-必要なもの: README参照
+必要なもの: README、issues参照
 
 モデル使用: Models内のStable Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ### [ComfyUI](https://comfy.org/download) 
