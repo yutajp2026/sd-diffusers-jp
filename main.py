@@ -1,4 +1,4 @@
-from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
+from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline, DPMSolverMultistepScheduler
 import torch
 from translate import Translator
 import os
@@ -37,6 +37,9 @@ with gr.Blocks() as demo:
         gr.Markdown("Txt2Imgタブでは、テキストから画像を生成できます。")
         def txt2img(prompt, steps):
             pipe1 = StableDiffusionPipeline.from_single_file(model_file).to(device)
+            pipe1.scheduler = DPMSolverMultistepScheduler.from_config(
+                pipe1.scheduler.config, timestep_spacing="trailing", use_karras_sigmas=True
+            )
             img = pipe1(honyaku(prompt), num_inference_steps=steps).images[0]
             gr.Info("生成が完了しました。")
             return img
@@ -51,6 +54,9 @@ with gr.Blocks() as demo:
         gr.Markdown("Img2Imgタブでは、画像をプロンプトに基づいて編集できます。")
         def img2img(image, prompt, steps):
             pipe2 = StableDiffusionImg2ImgPipeline.from_single_file(model_file).to(device)
+            pipe2.scheduler = DPMSolverMultistepScheduler.from_config(
+                pipe2.scheduler.config, timestep_spacing="trailing", use_karras_sigmas=True
+            )
             img0 = Image.open(image)
             img = pipe2(honyaku(prompt), image=img0, num_inference_steps=steps).images[0]
             gr.Info("生成が完了しました。")
