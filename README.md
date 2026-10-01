@@ -16,7 +16,24 @@
 ## Windows
 Releasesにインストーラを年内公開
 ## Linux
-1. `sudo apt-get install git`でgitをインストール
+1. 下記のコマンドでPythonとgitをインストール
+```
+# Debian系(Ubuntuなど)
+sudo apt update
+sudo apt install python3 python3-pip python3-venv git
+```
+```
+# Red Hat系(Oracle Linuxなど)
+sudo dnf install python3 python3-pip python3-venv git
+```
+```
+# Arch系
+sudo pacman install python3 python3-pip python3-venv git
+```
+```
+# SUSE系
+sudo zypper install python3 python3-pip python3-venv git
+```
 2. `git clone https://github.com/yutajp2026/sd-diffusers-jp.git`でこのリポジトリをクローン
 3. `cd sd-diffusers-jp`でスクリプトディレクトリに移動
 4. `bash sdwebui.sh`で実行 ⚠️linuxの場合は自動でブラウザを開きません

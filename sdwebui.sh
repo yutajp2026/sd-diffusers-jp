@@ -2,8 +2,7 @@
 set -euo pipefail
 
 echo "Pythonをインストールしています..."
-sudo apt update
-sudo apt install -y python3 python3-pip python3-venv
+
 
 if [ ! -d ".venv" ]; then
     echo "仮想環境を作成しています..."
