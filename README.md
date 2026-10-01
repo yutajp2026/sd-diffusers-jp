@@ -17,20 +17,20 @@
 Releasesにインストーラを年内公開
 ## Linux
 1. 下記のコマンドでPythonとgitをインストール
-```
+```bash
 # Debian系(Ubuntuなど)
 sudo apt update
 sudo apt install python3 python3-pip python3-venv git
 ```
-```
+```bash
 # Red Hat系(Oracle Linuxなど)
 sudo dnf install python3 python3-pip python3-venv git
 ```
-```
+```bash
 # Arch系
 sudo pacman install python3 python3-pip python3-venv git
 ```
-```
+```bash
 # SUSE系
 sudo zypper install python3 python3-pip python3-venv git
 ```
