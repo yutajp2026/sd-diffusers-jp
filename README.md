@@ -14,7 +14,10 @@
 
 # インストール
 ## Windows
-Releasesにインストーラを年内公開
+[Releases](https://github.com/yutajp2026/sd-diffusers-jp/releases)にインストーラを公開
+
+- ℹ️アップデートも最新版インストーラをダウンロードして開くことで行えます。
+- ⚠️アンインストール時、ディレクトリ自体は完全には削除されないので、手動で削除してください。
 ## Linux
 1. 下記のコマンドでPythonとgitをインストール
 ```bash
@@ -36,7 +39,7 @@ sudo zypper install python3 python3-pip python3-venv git
 ```
 2. `git clone https://github.com/yutajp2026/sd-diffusers-jp.git`でこのリポジトリをクローン
 3. `cd sd-diffusers-jp`でスクリプトディレクトリに移動
-4. `bash sdwebui.sh`で実行 ⚠️linuxの場合は自動でブラウザを開きません
+4. `bash sdwebui.sh`で実行 ⚠️linuxの場合は自動でブラウザを開きません。
 5. `git pull`でアップデート
 
 # Stable Diffusionに興味を持った方へ
