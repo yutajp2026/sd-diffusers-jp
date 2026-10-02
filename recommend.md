@@ -9,16 +9,17 @@
 ### モデル使用
 Models内のStable-diffusionにコピー
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-公式の説明通りにインストールしようとすると必ず詰むので独自に説明します。
+公式の説明通りにインストールしようとすると必ず詰むので独自に説明します。WebUI自体は使いやすいです。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
 2. [VC Regist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
 3. `winget install --id Git.Git -e --source winget`コマンドでgitをインストール
 4. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
-5. `webui-user.bat`の内容を編集して下記に変更
+5. `webui-user.bat`の内容を下記に変更(remはなくてもよい)
 ```
 @echo off
-rem 他のバージョンのPythonを使わないようにするために記載する初期パス(必要に応じて削除または変更)
+rem Pythonの初期パス(必要に応じて削除または変更)
+rem 他のバージョンのPythonを使わないようにするために記載します。
 set PYTHON="C:\Users\%username%\AppData\Local\Programs\Python\Python310\python.exe
 
 rem Nvidia GPUがない場合は"--use-cpu all --precision full --no-half --skip-torch-cuda-test"を代入
@@ -32,6 +33,30 @@ call webui.bat
 6. `webui-user.bat`を実行
 7. 6の途中でClipをインストールできないエラーが発生するので`venv\Scripts\pip.exe install git+https://github.com/openai/CLIP.git`コマンドを実行
 8. もう一度`webui-user.bat`を実行
+### Ubuntuへのインストール(他のLinuxはよくわからない)
+1. `sudo apt install wget git libgl1 libglib2.0-0`コマンドで依存関係をインストール
+2. 下記コマンドでPython3.11.16をインストール
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11 python3.11-venv
+```
+3. `webui-user.sh`の内容を下記に変更(#はコメント)
+```bash
+#!/bin/bash
+
+# Pythonを3.11に設定
+python_cmd="python3.11"
+
+# Nvidia GPUがない場合は"--use-cpu all --precision full --no-half --skip-torch-cuda-test"を代入してハッシュタグを削除
+#export COMMANDLINE_ARGS=""
+
+# 詰み防止のため
+export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
+```
+5. `webui.sh`を実行
+6. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
+7. もう一度`webui.sh`を実行
 ### モデル使用
 Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
