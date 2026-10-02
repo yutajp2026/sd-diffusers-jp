@@ -33,13 +33,27 @@ call webui.bat
 6. `webui-user.bat`を実行
 7. 6の途中でClipをインストールできないエラーが発生するので`venv\Scripts\pip.exe install git+https://github.com/openai/CLIP.git`コマンドを実行
 8. もう一度`webui-user.bat`を実行
-### Ubuntuへのインストール(他のLinuxはよくわからない)
-1. `sudo apt install wget git libgl1 libglib2.0-0`コマンドで依存関係をインストール
+### Linuxへのインストール
+1. 下記コマンドで依存関係をインストール
+```bash
+# Debian系(Ubuntuなど)
+sudo apt install wget git libgl1 libglib2.0-0
+```
+```bash
+# Arch系
+sudo pacman -S wget git
+```
 2. 下記コマンドでPython3.11.16をインストール
 ```bash
+# Debian系(Ubuntuなど)
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.11 python3.11-venv
+```
+```bash
+# Arch系
+sudo pacman -S yay
+yay -S python311
 ```
 3. `webui-user.sh`の内容を下記に変更(#はコメント)
 ```bash
@@ -54,9 +68,9 @@ python_cmd="python3.11"
 # 詰み防止のため
 export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 ```
-5. `webui.sh`を実行
-6. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
-7. もう一度`webui.sh`を実行
+4. `webui.sh`を実行
+5. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
+6. もう一度`webui.sh`を実行
 ### モデル使用
 Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
