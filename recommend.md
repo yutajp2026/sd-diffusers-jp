@@ -28,7 +28,7 @@ set STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 
 call webui.bat
 ```
-5. `webui.bat`を実行
+5. `webui-user.bat`を実行
 ### モデル使用
 Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
