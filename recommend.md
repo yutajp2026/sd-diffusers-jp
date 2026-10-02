@@ -9,7 +9,26 @@
 ### モデル使用
 Models内のStable-diffusionにコピー
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-公式の説明通りにやると必ず詰みます。issuesも読んでください。
+公式の説明通りにインストールしようとすると必ず詰むので独自に説明します。
+### Windowsへのインストール
+1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
+2. `winget install --id Git.Git -e --source winget`コマンドでgitをインストール
+3. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
+4. `webui-user.bat`の内容を編集して下記に変更
+```
+@echo off
+rem 他のバージョンのPythonを使わないようにするために記載する初期パス(必要に応じて削除または変更)
+set PYTHON="C:\Users\%username%\AppData\Local\Programs\Python\Python310\python.exe
+
+rem cpuの場合は"--use-cpu all --precision full --no-half --skip-torch-cuda-test"を代入
+set COMMANDLINE_ARGS=
+
+rem 詰み防止のため
+set STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
+
+call webui.bat
+```
+5. `webui.bat`を実行
 ### モデル使用
 Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
