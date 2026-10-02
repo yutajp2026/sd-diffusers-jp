@@ -12,7 +12,7 @@ Models内のStable-diffusionにコピー
 公式の説明通りにインストールしようとすると必ず詰むので独自に説明します。WebUI自体は使いやすいです。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
-2. [VC Regist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
+2. [VC Redist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
 3. `winget install --id Git.Git -e --source winget`コマンドでgitをインストール
 4. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
 5. `webui-user.bat`の内容を下記に変更(remはなくてもよい)
