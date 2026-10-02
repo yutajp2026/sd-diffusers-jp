@@ -14,7 +14,7 @@
 
 # インストール
 ## Windows
-[Releases](https://github.com/yutajp2026/sd-diffusers-jp/releases)にインストーラを公開
+[**Releases**](https://github.com/yutajp2026/sd-diffusers-jp/releases)にインストーラを公開
 
 - ℹ️アップデートも最新版インストーラをダウンロードして開くことで行えます。
 - ⚠️アンインストール時、ディレクトリ自体は完全には削除されないので、手動で削除してください。
