@@ -78,6 +78,6 @@ Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと
 ### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-起動方法でGUIにもWebUIにもなり、CPUだけで速く画像を生成できます。しかしPythonと[UV](https://docs.astral.sh/uv/)とStable Diffusionモデルの知識が必須なうえ、下記からわかる通りモデルの容量が多くなるので上級者向けです。
+起動方法でGUIにもWebUIにもなり、CPUだけで速く画像を生成できます。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)とStable Diffusionモデルの知識が必須なうえ、下記によってモデルの容量が多くなってロードに時間がかかるので上級者向けです。
 ### モデル流用
 Huggingface Hubを利用しているので不可(設定からLCM LoRAモードをオンにしてベースモデルIDをrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
