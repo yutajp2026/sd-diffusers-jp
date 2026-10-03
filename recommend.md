@@ -30,7 +30,7 @@ set STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 
 call webui.bat
 ```
-6. `webui-user.bat`を実行
+6. `webui-user.bat`(起動ファイル)を実行
 7. 6の途中でClipをインストールできないエラーが発生するので`venv\Scripts\pip.exe install git+https://github.com/openai/CLIP.git`コマンドを実行
 8. もう一度`webui-user.bat`を実行
 ### Linuxへのインストール
@@ -68,16 +68,16 @@ python_cmd="python3.11"
 # 詰み防止のため
 export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 ```
-4. `webui.sh`を実行
+4. `webui.sh`(起動ファイル)を実行
 5. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
 6. もう一度`webui.sh`を実行
 ### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
-アプリ版ですが、ワークフローの知識が必要なため上級者向けです。アプリディレクトリの構造も複雑です。
+アプリ版ですが、ワークフローの知識が必要なため上級者向けです。
 ### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-起動方法でGUIにもWebUIにもなり、CPUだけで速く画像を生成できます。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)とStable Diffusionモデルの知識が必須なうえ、下記によってモデルの容量が多くなってロードに時間がかかるので上級者向けです。
+CPUだけで速く画像を生成でき、起動方法でGUIにもWebUIにもなります。アプリ自体の容量もダントツ少ないです。しかしPythonと[UV](https://docs.astral.sh/uv/)とStable Diffusionモデルの知識が必須なうえ、下記モジュールによってRAMが埋まるので上級者向けです。
 ### モデル流用
 Huggingface Hubを利用しているので不可(設定からLCM LoRAモードをオンにしてベースモデルIDをrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
