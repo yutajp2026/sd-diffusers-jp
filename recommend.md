@@ -73,6 +73,7 @@ export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 6. もう一度`webui.sh`を実行
 ### モデル使用
 Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
+## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
 ## [ComfyUI](https://comfy.org/download) 
 アプリ版ですがワークフローの知識が必要なため上級者向けです。
 ### モデル使用
