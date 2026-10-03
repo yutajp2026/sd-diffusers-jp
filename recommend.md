@@ -7,13 +7,13 @@
 ## [SwarmUI](https://swarmui.net/)
 事前に必要なものもないので使いやすいです(一部OS)。Windows版はWebUIにもGUIにもなります。
 ### モデル使用
-Models内のStable-diffusionにコピー
+Models内のStable-diffusionに移動またはコピー
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-公式の説明通りにインストールしようとすると必ず詰むので独自に説明します。WebUI自体は使いやすいです。
+王道で、アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
 ### Windowsへのインストール
 1. [Python3.10.6](https://www.python.org/downloads/release/python-3106/)をインストール
 2. [VC Redist](https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist?view=msvc-170)がない場合はインストール
-3. `winget install --id Git.Git -e --source winget`コマンドでgitをインストール
+3. コマンドプロンプトを開き`winget install --id Git.Git -e --source winget`コマンドでgitをインストール
 4. `git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git`コマンドでリポジトリをクローン
 5. `webui-user.bat`の内容を下記に変更(remはなくてもよい)
 ```
@@ -72,9 +72,10 @@ export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 5. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
 6. もう一度`webui.sh`を実行
 ### モデル使用
-Models内のStable-Diffusionにコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
-## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
+Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
-アプリ版ですがワークフローの知識が必要なため上級者向けです。
+アプリ版ですがワークフローの知識が必要なため上級者向けです。アプリディレクトリの構造も複雑です。
 ### モデル使用
-Models内のdiffusion_modelsにコピー
+Models内のdiffusion_modelsに移動またはコピー
+## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
+CPUで速く画像生成できますが、Stable Diffusionモデルの知識が必要なうえ初期設定だとモデルの容量が多くなるので上級者向けです。
