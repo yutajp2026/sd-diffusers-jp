@@ -78,6 +78,6 @@ Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと
 ### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUで速く画像生成できますが、Stable Diffusionモデルの知識が必要なうえ、下記からわかる通りモデルの容量が多くなるので上級者向けです。
+起動方法でGUIにもWebUIにもなり、CPUだけで速く画像を生成できます。しかしStable Diffusionモデルの知識が必須なうえ、下記からわかる通りモデルの容量が多くなるので上級者向けです。
 ### モデル流用
-不可(LCM LoRaモードをオンにしてrunwayml/stable-diffusion-v1-5を選択すると同じモデルを使用できます)
+Hugging Hubを利用するので不可(LCM LoRAモードをオンにしてrunwayml/stable-diffusion-v1-5を選択するとおそらく本ソフトと同じモデルを使用できます)
