@@ -2,11 +2,11 @@
 これらのアプリには様々な機能が備わっており、本ソフトで使用したモデルを流用できます。上から順に使いやすいです。
 ## [InvokeAI](https://invoke.ai/start-here/installation/)
 最も使いやすく、本ソフトとのモデルの共有もしやすいです。
-### モデル使用
+### モデル流用
 モデルパスに入力
 ## [SwarmUI](https://swarmui.net/)
 事前に必要なものもないので使いやすいです(一部OS)。Windows版はWebUIにもGUIにもなります。
-### モデル使用
+### モデル流用
 Models内のStable-diffusionに移動またはコピー
 ## [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 王道で、アプリの容量が比較的小さく(本ソフトよりは大きい)、WebUI自体は使いやすいです。しかし公式の説明通りにインストールしようとすると必ず詰むので独自にインストール方法を説明します。
@@ -71,11 +71,13 @@ export STABLE_DIFFUSION_REPO=https://github.com/w-e-w/stablediffusion.git
 4. `webui.sh`を実行
 5. 5の途中でClipをインストールできないエラーが発生するので`./venv/bin/pip install git+https://github.com/openai/CLIP.git`コマンドを実行
 6. もう一度`webui.sh`を実行
-### モデル使用
+### モデル流用
 Models内のStable-Diffusionに移動またはコピー(ただし本ソフトと同じモデルが自動ダウンロードされます)
 ## [ComfyUI](https://comfy.org/download) 
-アプリ版ですがワークフローの知識が必要なため上級者向けです。アプリディレクトリの構造も複雑です。
-### モデル使用
+アプリ版ですが、ワークフローの知識が必要なため上級者向けです。アプリディレクトリの構造も複雑です。
+### モデル流用
 Models内のdiffusion_modelsに移動またはコピー
 ## [FastSDCPU](https://github.com/rupeshs/fastsdcpu)
-CPUで速く画像生成できますが、Stable Diffusionモデルの知識が必要なうえ初期設定だとモデルの容量が多くなるので上級者向けです。
+CPUで速く画像生成できますが、Stable Diffusionモデルの知識が必要なうえ、下記からわかる通りモデルの容量が多くなるので上級者向けです。
+### モデル流用
+不可(LCM LoRaモードをオンにしてrunwayml/stable-diffusion-v1-5を選択すると同じモデルを使用できます)
